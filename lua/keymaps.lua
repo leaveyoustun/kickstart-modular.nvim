@@ -78,5 +78,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
 
+-- Disable annoying yank-on-delete
+vim.keymap.set('n', 'd', '"_d')
+vim.keymap.set('n', 'D', '"_D')
+vim.keymap.set('n', 'c', '"_c')
+vim.keymap.set('v', 'd', '"_d')
+vim.keymap.set('v', 'D', '"_D')
+vim.keymap.set('v', 'c', '"_c')
+
 -- Undo tree
 vim.keymap.set('n', '<leader>u', ':UndotreeToggle<CR>', { desc = 'Toggle Undotree' })
+
+-- Toggle checkboxes
+vim.keymap.set('n', '<leader>t', ":lua require('toggle-checkbox').toggle()<CR>")

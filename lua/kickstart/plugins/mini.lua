@@ -4,13 +4,6 @@ local function gh(repo) return 'https://github.com/' .. repo end
 --  A collection of various small independent plugins/modules
 vim.pack.add { gh 'nvim-mini/mini.nvim' }
 
--- If a nerd font is available, load the icons module for pretty icons in various plugins.
-if vim.g.have_nerd_font then
-  require('mini.icons').setup()
-  -- Used for backwards compatibility with plugins that require `nvim-web-devicons` (e.g. telescope.nvim)
-  MiniIcons.mock_nvim_web_devicons()
-end
-
 -- Better Around/Inside textobjects
 --
 -- Examples:
@@ -33,6 +26,7 @@ require('mini.ai').setup {
 -- - sr)'  - [S]urround [R]eplace [)] [']
 require('mini.surround').setup()
 
+require('mini.move').setup()
 -- Simple and easy statusline.
 --  You could remove this setup call if you don't like it,
 --  and try some other statusline plugin
