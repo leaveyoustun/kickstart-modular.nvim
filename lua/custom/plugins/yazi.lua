@@ -1,43 +1,22 @@
-return {
-  'mikavilpas/yazi.nvim',
-  version = '*', -- use the latest stable version
-  event = 'VeryLazy',
-  dependencies = {
-    { 'nvim-lua/plenary.nvim', lazy = true },
-  },
-  keys = {
-    -- 👇 in this section, choose your own keymappings!
-    {
-      '<leader>-',
-      mode = { 'n', 'v' },
-      '<cmd>Yazi<cr>',
-      desc = 'Open yazi at the current file',
-    },
-    {
-      -- Open in the current working directory
-      '<leader>cw',
-      '<cmd>Yazi cwd<cr>',
-      desc = "Open the file manager in nvim's working directory",
-    },
-    {
-      '<c-up>',
-      '<cmd>Yazi toggle<cr>',
-      desc = 'Resume the last yazi session',
-    },
-  },
-  ---@type YaziConfig | {}
-  opts = {
-    -- if you want to open yazi instead of netrw, see below for more info
-    open_for_directories = false,
-    keymaps = {
-      show_help = '<f1>',
-    },
-  },
-  -- 👇 if you use `open_for_directories=true`, this is recommended
-  init = function()
-    -- mark netrw as loaded so it's not loaded at all.
-    --
-    -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
-    vim.g.loaded_netrwPlugin = 1
-  end,
+local function gh(repo) return 'https://github.com/' .. repo end
+
+vim.pack.add {
+  gh 'nvim-lua/plenary.nvim',
+  gh 'mikavilpas/yazi.nvim',
 }
+
+-- mark netrw as loaded so it's not loaded at all (recommended if open_for_directories=true)
+vim.g.loaded_netrwPlugin = 1
+
+require('yazi').setup {
+  open_for_directories = false,
+  keymaps = {
+    show_help = '<f1>',
+  },
+}
+
+vim.keymap.set({ 'n', 'v' }, '<leader>-', '<cmd>Yazi<cr>', { desc = 'Open yazi at the current file' })
+vim.keymap.set('n', '<leader>cw', '<cmd>Yazi cwd<cr>', { desc = "Open yazi in nvim's cwd" })
+vim.keymap.set('n', '<c-up>', '<cmd>Yazi toggle<cr>', { desc = 'Resume the last yazi session' })
+
+-- vim: ts=2 sts=2 sw=2 et
