@@ -91,3 +91,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.textwidth = 100   -- for <gq> keymap (wrapping the selected text)
+vim.opt.wrap = true
+vim.opt.wrapmargin = 0
+vim.opt.linebreak = true
