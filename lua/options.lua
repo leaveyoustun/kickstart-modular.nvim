@@ -19,7 +19,7 @@ vim.g.have_nerd_font = false
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -82,3 +82,16 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- My Options
+vim.o.conceallevel = 2
+vim.opt.modeline = false
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.textwidth = 100   -- for <gq> keymap (wrapping the selected text)
+vim.opt.wrap = true
+vim.opt.wrapmargin = 0
+vim.opt.linebreak = true
