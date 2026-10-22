@@ -84,14 +84,14 @@ vim.o.confirm = true
 -- vim: ts=2 sts=2 sw=2 et
 
 -- My Options
-vim.o.conceallevel = 2
+vim.o.conceallevel = 0
 vim.opt.modeline = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.opt.textwidth = 100   -- for <gq> keymap (wrapping the selected text)
+-- vim.opt.textwidth = 100   -- for <gq> keymap (wrapping the selected text)
 vim.opt.wrap = true
-vim.opt.wrapmargin = 0
-vim.opt.linebreak = true
+-- vim.opt.wrapmargin = 0
+-- vim.opt.linebreak = true
