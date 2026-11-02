@@ -85,6 +85,7 @@ vim.o.confirm = true
 
 -- My Options
 vim.o.conceallevel = 0
+vim.o.colorcolumn = "101"
 vim.opt.modeline = false
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

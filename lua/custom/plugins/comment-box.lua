@@ -25,6 +25,7 @@ end
 vim.keymap.set({ 'n', 'v' }, '<leader>cb', plain 'CBlabox', { desc = '[B]ox (left)' })
 vim.keymap.set({ 'n', 'v' }, '<leader>ct', plain 'CBllline', { desc = '[T]itled line' })
 vim.keymap.set('n', '<leader>cl', plain 'CBline', { desc = '[L]ine' })
+vim.keymap.set({ 'n', 'v' }, '<leader>cq', plain 'CBlcbox18', { desc = '[Q]uote' })
 vim.keymap.set({ 'n', 'v' }, '<leader>cd', '<Cmd>CBd<CR>', { desc = '[D]elete box' })
 vim.keymap.set('n', '<leader>cc', '<Cmd>CBcatalog<CR>', { desc = '[C]atalog' })
 

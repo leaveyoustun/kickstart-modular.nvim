@@ -17,4 +17,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.cmd("Wrapwidth 100")
   end,
 })
-
